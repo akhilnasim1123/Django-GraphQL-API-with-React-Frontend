@@ -1,0 +1,35 @@
+import { gql } from '@apollo/client';
+export const WHOAMI = gql`
+  query ME {
+    whoami {
+      id
+      username
+      email
+      bio
+    }
+  }
+`;
+
+
+export const USERS = gql`
+  query ME {
+    users {
+      id
+      username
+      email
+      bio
+    }
+  }
+`;
+
+
+export const DEPARTMENTS = gql`
+  query DEPARTMENTS  {
+    departments (user:$user){
+      id
+      username
+      email
+      bio
+    }
+  }
+`;

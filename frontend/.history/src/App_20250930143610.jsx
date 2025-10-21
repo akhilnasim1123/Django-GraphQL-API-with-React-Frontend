@@ -1,0 +1,37 @@
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import LoginPage from './Containers/LoginPage';
+import HomePage from './Containers/Home';
+// import ProtectedRoute from './ProtectedRoute';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { verifyToken } from './Features/Authority';
+import Loader from './Components/Loader';
+
+function App() {
+  const { isAuthenticated,loading } = useSelector((state) => state.authority);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      dispatch(verifyToken(token))
+    }
+  }, []);
+  
+  if (loading) <Loader/>
+  return (
+    <Router>
+      <Routes>
+        <Route path="/login" element={<LoginPage />} />
+        <Route
+          path="/"
+          element={isAuthenticated ?<HomePage /> : <LoginPage/> }
+        />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
+ 

@@ -1,0 +1,25 @@
+// src/apolloClient.js
+import { ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client'
+import { setContext } from '@apollo/client/link/context'
+
+const httpLink = createHttpLink({
+  uri: 'http://localhost:8000/graphql/',  // Your Django GraphQL endpoint
+})
+
+// Attach the JWT token to each request if it exists
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem('token') // get token from localStorage (or wherever you store it)
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `JWT ${token}` : '',
+    }
+  }
+})
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+})
+
+export default client

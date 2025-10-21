@@ -1,0 +1,9 @@
+.navlink{
+  background-color: transparent;
+  color: '#e0e0e0';
+  font-weight: normal;
+}.navlink.active{
+  background-color: '#00bcd4';
+  color: '#121212';
+  font-weight: bold;
+} 

@@ -1,0 +1,132 @@
+/* Base Styles */
+body {
+    /* Optional: Set a clean background for the whole page */
+    background-color: #f4f6f9;
+    font-family: 'Inter', sans-serif; /* Use a modern font like Inter or Roboto */
+}
+
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Login Card Styling */
+.login-container {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Subtle shadow for depth */
+    padding: 40px;
+    width: 100%;
+    max-width: 400px; /* Constrain the card size */
+    text-align: center;
+}
+
+/* Typography */
+.login-container h1 {
+    font-size: 28px;
+    color: #333333;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #666666;
+    margin-bottom: 30px;
+}
+
+/* Form Groups and Inputs */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between form elements */
+}
+
+.form-group {
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    color: #444444;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-sizing: border-box; /* Crucial for padding/border within width */
+}
+
+.form-group input:focus {
+    border-color: #007bff; /* Accent color on focus */
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+/* Button Styling */
+.submit-button {
+    background-color: #007bff; /* Primary brand color */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    margin-top: 10px;
+}
+
+.submit-button:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+.submit-button:disabled {
+    background-color: #a0c9ff;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Error Message */
+.error-message {
+    color: #e74c3c; /* Red for errors */
+    font-size: 14px;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #fceae9;
+    border: 1px solid #e74c3c;
+    border-radius: 4px;
+}
+
+/* Links/Extra Text */
+.extra-links {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.extra-links a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.extra-links a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.extra-links p {
+    margin-top: 10px;
+}
